@@ -41,3 +41,40 @@ def get_spotify_valence(song_title, artist_name, spotify_api_key):
     valence = jsonObject["valence"]
     print("Found valence: {:.2f} of the song: {} - {}".format(valence, song_title, artist_name))
     return valence
+
+
+# To authenticate to Google Cloud and download a ready to use model
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+import torch
+
+def load_model(model, shared_file_id, path, use_trained_model=True,colab=False):
+  # Use your trained model
+  if use_trained_model:
+    model.load_state_dict(torch.load(path))
+    print('Loaded the trained model Successfully')  
+
+  # Use existing model
+  else:
+    # When run in colab need a small modification to connect to Drive.
+    if colab:
+      auth.authenticate_user()
+      gauth = GoogleAuth()
+      # Download json metadata
+      gauth.credentials = GoogleCredentials.get_application_default() 
+    # When run in console
+    else:
+      gauth = GoogleAuth()
+      # Create local webserver which automatically handles authentication.
+      gauth.LocalWebserverAuth() 
+    # Create GoogleDrive instance with authenticated GoogleAuth instance.
+    drive = GoogleDrive(gauth)
+    # Initialize GoogleDriveFile instance with file id.
+    file_object = drive.CreateFile({'id':shared_file_id}) 
+    # Download file with name MODEL_NAME
+    file_object.GetContentFile(path)
+    print('Downloaded model Successfully')  
+    model.load_state_dict(torch.load(path))
+    print('Loaded the ready-to-use model Successfully')  
