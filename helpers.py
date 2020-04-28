@@ -46,7 +46,7 @@ def get_spotify_valence(song_title, artist_name, spotify_api_key):
 # To authenticate to Google Cloud and download a ready to use model
 from pydrive.auth import GoogleAuth
 from pydrive.drive import GoogleDrive
-from google.colab import auth
+# from google.colab import auth
 from oauth2client.client import GoogleCredentials
 import torch
 
