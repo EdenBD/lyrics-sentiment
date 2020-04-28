@@ -10,6 +10,13 @@ from urllib.parse import quote
 import time
 import sys
 
+# To authenticate to Google Cloud and download a ready to use model
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
+from google.colab import auth
+from oauth2client.client import GoogleCredentials
+import torch
+
 # need to keep quering "Get Token" button here: https://developer.spotify.com/console/get-audio-features-track/?id=06AKEBrKUckW0KREUWRnvT
 def get_spotify_valence(song_title, artist_name, spotify_api_key):
   """
@@ -41,14 +48,6 @@ def get_spotify_valence(song_title, artist_name, spotify_api_key):
     valence = jsonObject["valence"]
     print("Found valence: {:.2f} of the song: {} - {}".format(valence, song_title, artist_name))
     return valence
-
-
-# To authenticate to Google Cloud and download a ready to use model
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
-# from google.colab import auth
-from oauth2client.client import GoogleCredentials
-import torch
 
 def load_model(model, shared_file_id, path, use_trained_model=True,colab=False):
   # Use your trained model
