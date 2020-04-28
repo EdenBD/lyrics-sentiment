@@ -49,9 +49,7 @@ def get_spotify_valence(song_title, artist_name, spotify_api_key):
     print("Found valence: {:.2f} of the song: {} - {}".format(valence, song_title, artist_name))
     return valence
 
-def check():
-  print("FUCK OFFFFFFFFFFFF")
-  
+ 
 def load_model(model, shared_file_id, path, use_trained_model=True,colab=False):
   # Use your trained model
   if use_trained_model:
