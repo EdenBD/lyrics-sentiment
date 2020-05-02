@@ -20,6 +20,9 @@ import torch
 # To get lyrics
 import lyricsgenius 
 
+# Data visualization
+import matplotlib.pyplot as plt
+
 # need to keep quering "Get Token" button here: https://developer.spotify.com/console/get-audio-features-track/?id=06AKEBrKUckW0KREUWRnvT
 def get_spotify_valence(song_title, artist_name, spotify_api_key):
   """
@@ -86,3 +89,27 @@ def get_lyrics_from_genius(song, artist, token):
   genius = lyricsgenius.Genius(token, remove_section_headers=True)
   song_obj = genius.search_song(song,artist)
   return song_obj.lyrics
+
+def plot_training(val_loss, accuracy, pos_accuracy, neg_accuracy, neutral_accuracy):
+  plt.title("Training Evaluaiton per Epoch")
+  plt.xlabel("Epoch")
+  plt.ylabel("Metrics")
+  
+  plt.gca().set_color_cycle(['black', 'blue', 'green', 'red', 'orange'])
+  plt.plot(val_loss)
+  plt.plot(accuracy)
+  plt.plot(pos_accuracy)
+  plt.plot(neg_accuracy)
+  plt.plot(neutral_accuracy)
+
+  plt.legend(['val_loss', 'accuracy', 'pos_accuracy', 'neg_accuracy', 'neutral_accuracy'], loc='upper left')
+
+  plt.show()
+
+def plot_histogram(distribution,bins_num, xlabel, ylabel, title):
+  print('{} avg. value: {:.2f}'.format(xlabel, np.mean(distribution)))
+  plt.hist(distribution, bins=bins_num)
+  plt.xlabel(xlabel)
+  plt.ylabel(ylabel)
+  plt.title(title)
+  plt.show()
