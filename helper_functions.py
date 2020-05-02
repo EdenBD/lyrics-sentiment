@@ -17,6 +17,9 @@ from google.colab import auth
 from oauth2client.client import GoogleCredentials
 import torch
 
+# To get lyrics
+import lyricsgenius 
+
 # need to keep quering "Get Token" button here: https://developer.spotify.com/console/get-audio-features-track/?id=06AKEBrKUckW0KREUWRnvT
 def get_spotify_valence(song_title, artist_name, spotify_api_key):
   """
@@ -78,3 +81,8 @@ def load_model(model, shared_file_id, path, use_trained_model=True,colab=False):
     print('Downloaded model Successfully')  
     model.load_state_dict(torch.load(path))
     print('Loaded the ready-to-use model Successfully')  
+
+def get_lyrics_from_genius(song, artist, token):
+  genius = lyricsgenius.Genius(token, remove_section_headers=True)
+  song_obj = genius.search_song(song,artist)
+  return song_obj.lyrics
