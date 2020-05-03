@@ -90,19 +90,21 @@ def get_lyrics_from_genius(song, artist, token):
   song_obj = genius.search_song(song,artist)
   return song_obj.lyrics
 
-def plot_training(val_loss, accuracy, pos_accuracy, neg_accuracy, neutral_accuracy):
+def plot_training(num_epochs, val_loss, accuracy, pos_accuracy, neg_accuracy, neutral_accuracy):
   plt.title("Training Evaluaiton per Epoch")
   plt.xlabel("Epoch")
   plt.ylabel("Metrics")
-  
-  plt.gca().set_color_cycle(['black', 'blue', 'green', 'red', 'orange'])
+
+  plt.gca().set_prop_cycle(color=['black', 'blue', 'green', 'red', 'orange'])
+  # Set x axis
+  plt.xticks(range(num_epochs), range(1,num_epochs+1))
   plt.plot(val_loss)
   plt.plot(accuracy)
   plt.plot(pos_accuracy)
   plt.plot(neg_accuracy)
   plt.plot(neutral_accuracy)
 
-  plt.legend(['val_loss', 'accuracy', 'pos_accuracy', 'neg_accuracy', 'neutral_accuracy'], loc='upper left')
+  plt.legend(['val_loss', 'accuracy', 'pos_accuracy', 'neg_accuracy', 'neutral_accuracy'], loc='lower left')
 
   plt.show()
 
