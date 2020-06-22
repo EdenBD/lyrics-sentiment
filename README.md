@@ -26,8 +26,6 @@ The examples below use [NLTK demo](https://text-processing.com/demo/sentiment/) 
 Words in the word cloud are sized by their respective difference on the model's prediction, and their positive (green) or negative (red) influence. 
  
   [Armin Van Buuren- Blah Blah Blah](https://www.youtube.com/watch?v=mfJhMfOPWdE)
-  
-  
      * NLTK sentiment classification: Negative
      * Spotify Valence: 0.18
      * LyricsAudioBoost Model: 0.76  **CORRECT** 
