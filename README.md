@@ -1,13 +1,13 @@
 # LyricsAudioBoost 
 ## Combining BERT and Spotify Valence Feature For Track Sentiment Analysis
 
-Built to solve this problem:
-
-As the images above demonstrate, using strictly audio OR lyrics to measure a song positiveness might be inaccurate. 
-
 In [this notebook](https://github.com/EdenBD/lyrics-sentiment/blob/master/Tracks_Sentiment_Analysis.ipynb) I combine Spotify audio feature and BERT word embedding, to produce more realistic predictions of sentiment. 
 I use [hugginface](https://github.com/huggingface/transformers) pre-trained BERT transformer as an embedding layer, and train an additional bidirectional GRU layer for the sentiment analysis, regression task (outputting a point prediction instead of a class). 
 To train the fine-tunning layer of the model, I use Spotify valence attribute on which I added to a lyrics dataset. 
+
+### Motivation:
+
+As the images above demonstrate, using strictly audio OR lyrics to measure a song positiveness might be inaccurate. 
 
 ### Steps to build model:
 
