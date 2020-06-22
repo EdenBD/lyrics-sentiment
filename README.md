@@ -1,9 +1,9 @@
 # LyricsAudioBoost 
 ## Combining BERT and Spotify Valence Feature For Track Sentiment Analysis
 
-In [this notebook](https://github.com/EdenBD/lyrics-sentiment/blob/master/Tracks_Sentiment_Analysis.ipynb) I combine Spotify audio feature and BERT word embedding, to produce more realistic predictions of sentiment. 
-I use [hugginface](https://github.com/huggingface/transformers) pre-trained BERT transformer as an embedding layer, and train an additional bidirectional GRU layer for the sentiment analysis, regression task (outputting a point prediction instead of a class). 
-To train the fine-tunning layer of the model, I use Spotify valence attribute on which I added to a lyrics dataset. 
+In [this notebook](https://github.com/EdenBD/lyrics-sentiment/blob/master/Tracks_Sentiment_Analysis.ipynb) I combine Spotify audio feature and BERT word embedding to predict tracks sentiments. 
+I use [hugginface](https://github.com/huggingface/transformers) pre-trained BERT transformer as an embedding layer, and train an additional bidirectional GRU layer for the sentiment analysis regression task (point prediction in range [0-1]). 
+To train the fine-tunning layer of the model I use Spotify valence attribute which I added to a lyrics dataset. 
 
 ### Motivation:
 
