@@ -11,7 +11,7 @@ As the images above demonstrate, using strictly audio OR lyrics to measure a son
 
 ### Steps to build model:
 
- 1. **Database:** gathering songs lyrics, adding [Spotify valence attribute](https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/) and [pre-processing](https://github.com/EdenBD/lyrics-sentiment/blob/master/Spotify_Dataset.ipynb).I uploaded to Kaggle the final [150K Lyrics Labeled with Spotify Valence Dataset](https://www.kaggle.com/edenbd/150k-lyrics-labeled-with-spotify-valence). 
+ 1. **Database:** gathering songs lyrics, adding [Spotify valence attribute](https://developer.spotify.com/documentation/web-api/reference/tracks/get-several-audio-features/) and [pre-processing](https://github.com/EdenBD/lyrics-sentiment/blob/master/Spotify_Dataset.ipynb). I uploaded to Kaggle the final [150K Lyrics Labeled with Spotify Valence Dataset](https://www.kaggle.com/edenbd/150k-lyrics-labeled-with-spotify-valence). 
  2. **Model Design:** Iteratively improved model capacity. 
  3. **Evaluation:** loss and accuracy metrics across 3 buckets - negative, neutral and positive sentiments. 
  4. **Interpretation:** Understanding what the model is learning using word clouds.
