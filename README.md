@@ -8,10 +8,10 @@ To train the fine-tunning layer of the model I use Spotify valence attribute whi
 ### Motivation:
 
 The examples below use [NLTK demo](https://text-processing.com/demo/sentiment/) and [Spotify valence](https://developer.spotify.com/console/get-audio-features-track/?id=06AKEBrKUckW0KREUWRnvT) to measure a track's positivenesss. They demonstrate that using strictly audio OR lyrics might be inaccurate. 
-  1. Positive Sentiment Example: [Baz Luhrmann - Everybody's Free To Wear Sunscreen](https://www.youtube.com/watch?v=sTJ7AzBIJoI&t=33s)
+  1. Positive Sentiment Example: [Baz Luhrmann - Everybody's Free To Wear Sunscreen](https://www.youtube.com/watch?v=sTJ7AzBIJoI&t=33s).
      * NLTK sentiment classification: Negative. 
      * **Spotify Valence: 0.8**.
-  2. Negative Sentiment Example: [Otis Redding- Mr. pitiful](https://www.youtube.com/watch?v=Alo7U0S_VPU)
+  2. Negative Sentiment Example: [Otis Redding- Mr. pitiful](https://www.youtube.com/watch?v=Alo7U0S_VPU).
      * **NLTK sentiment classification: Negative**.
      * Spotify Valence: 0.9.
 
@@ -25,10 +25,10 @@ The examples below use [NLTK demo](https://text-processing.com/demo/sentiment/) 
  ### Example:
 Words in the word cloud are sized by their respective difference on the model's prediction, and their positive (green) or negative (red) influence. 
  
-Positive Sentiment Example: [Armin Van Buuren- Blah Blah Blah](https://www.youtube.com/watch?v=mfJhMfOPWdE)
-* NLTK sentiment classification: Negative
-* Spotify Valence: 0.18
-* **LyricsAudioBoost Model: 0.76**
+Positive Sentiment Example: [Armin Van Buuren- Blah Blah Blah](https://www.youtube.com/watch?v=mfJhMfOPWdE).
+* NLTK sentiment classification: Negative.
+* Spotify Valence: 0.18.
+* **LyricsAudioBoost Model: 0.76**.
 
  ![Model interpretation - Word cloud](https://github.com/EdenBD/lyrics-sentiment/blob/master/blah_good.png)
  
